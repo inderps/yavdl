@@ -1,4 +1,5 @@
-import { Yavdl } from './../src/Yavdl';
+import { Yavdl, createElm } from './../src/Yavdl';
+import { expect, $ } from './testHelper';
 
 describe('Yavdl', () => {
 
@@ -10,5 +11,13 @@ describe('Yavdl', () => {
 
   it('render a div with all attributes', () => {
 
+    const nestedElm = createElm('span',
+                               ['this is nested span inside div'],
+                               { class: 'child' });
+    const elm = createElm('div', [nestedElm], { class: 'parent' });
+
+    yavdl.render(elm);
+
+    expect($('#root').html()).to.eql('<div class="parent"><span class="child">this is nested span inside div</span></div>');
   });
 });
