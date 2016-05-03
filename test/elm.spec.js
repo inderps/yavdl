@@ -11,8 +11,8 @@ describe('elm', () => {
 
     expect(parentElm.tag).to.eql('div');
     expect(parentElm.attrs).to.eql({ class: 'parent' });
-    expect(parentElm.body[0].tag).to.eql('span');
-    expect(parentElm.body[0].attrs).to.eql({ class: 'child' });
-    expect(parentElm.body[0].body[0]).to.eql('this is nested span inside div');
+    expect(parentElm.children[0].tag).to.eql('span');
+    expect(parentElm.children[0].attrs).to.eql({ class: 'child' });
+    expect(parentElm.children[0].children[0]).to.eql('this is nested span inside div');
   });
 });

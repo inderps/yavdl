@@ -1,7 +1,7 @@
-export default function elm(tag, body, attrs) {
+export default function elm(tag, children, attrs) {
   return {
     tag,
-    body,
+    children,
     attrs,
   };
 }

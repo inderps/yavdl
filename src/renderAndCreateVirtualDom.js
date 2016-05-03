@@ -8,15 +8,15 @@ function setAttributes(jsElm, htmlElm, uniqueId) {
 
 function renderChildren(jsElm, htmlElm, uniqueId) {
   setAttributes(jsElm, htmlElm, uniqueId);
-  const body = [];
-  jsElm.body.forEach(child => {
+  const children = [];
+  jsElm.children.forEach(child => {
     let childHtmlElm;
     if (typeof child === 'string') {
       childHtmlElm = document.createTextNode(child);
-      body.push(child);
+      children.push(child);
     } else {
       childHtmlElm = document.createElement(child.tag);
-      body.push(renderChildren(child, childHtmlElm, uniqueId + 1));
+      children.push(renderChildren(child, childHtmlElm, uniqueId + 1));
     }
     htmlElm.appendChild(childHtmlElm);
   });
@@ -24,7 +24,7 @@ function renderChildren(jsElm, htmlElm, uniqueId) {
     tag: jsElm.tag,
     attrs: jsElm.attrs,
     uniqueId: uniqueId,
-    body: body,
+    children: children,
   };
 }
 
