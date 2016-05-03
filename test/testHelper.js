@@ -6,4 +6,8 @@ global.document = jsdom.jsdom('<!doctype html><html><body><div id="root"></div><
 global.window = global.document.defaultView;
 const $ = jq(window);
 
-export { expect, $ };
+function clearDom() {
+  $('#root').html('');
+}
+
+export { expect, $, clearDom };

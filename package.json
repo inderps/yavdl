@@ -2,7 +2,7 @@
   "name": "yavdl",
   "version": "1.0.0",
   "description": "Yet another virtual dom library",
-  "main": "lib/Yavdl.js",
+  "main": "lib/index.js",
   "scripts": {
     "compile": "babel src --out-dir lib",
     "prepublish": "npm run compile",
