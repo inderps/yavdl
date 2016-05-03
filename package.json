@@ -1,0 +1,14 @@
+{
+  "name": "yavdl",
+  "version": "1.0.0",
+  "description": "Yet another virtual dom library",
+  "main": "lib/Yavdl.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/inderps/yavdl.git"
+  },
+  "author": "Inderpal Singh <singhinther@gmail.com> ",
+  "homepage": "https://github.com/inderps/yavdl#readme",
+  "devDependencies": {
+  }
+}
