@@ -21,6 +21,11 @@ expect(patchList[0].uniqueId).to.eql(0);
 expect(patchList[0].newNode.tag).to.eql('h1');
 ```
 
+## Run Tests locally
+
+* `npm install`
+* `npm run test`
+
 To learn more, Checkout [`diff`](https://github.com/inderps/yavdl/blob/master/test/diff.spec.js) specs.
 
 
