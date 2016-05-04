@@ -9,6 +9,7 @@ function setAttributes(jsElm, htmlElm, uniqueId) {
 function renderChildren(jsElm, htmlElm, uniqueId) {
   setAttributes(jsElm, htmlElm, uniqueId);
   const children = [];
+  let childrenUniqueId = uniqueId;
   jsElm.children.forEach(child => {
     let childHtmlElm;
     if (typeof child === 'string') {
@@ -16,7 +17,8 @@ function renderChildren(jsElm, htmlElm, uniqueId) {
       children.push(child);
     } else {
       childHtmlElm = document.createElement(child.tag);
-      children.push(renderChildren(child, childHtmlElm, uniqueId + 1));
+      childrenUniqueId = childrenUniqueId + 1;
+      children.push(renderChildren(child, childHtmlElm, childrenUniqueId));
     }
     htmlElm.appendChild(childHtmlElm);
   });
