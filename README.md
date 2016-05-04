@@ -5,6 +5,8 @@ Yet another virtual dom library
 ## Usage
 
 ```javascript
+import { elm, renderAndCreateVirtualDom, diff } from 'yavdl';
+
 const realElm = elm('div', ['some-content'], { class: 'content' });
 
 const vDom = renderAndCreateVirtualDom('root', realElm);
