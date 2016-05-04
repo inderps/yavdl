@@ -5,7 +5,7 @@ Yet another virtual dom library
 ## Usage
 
 ```javascript
-import { elm, renderAndCreateVirtualDom, diff, applyPatch } from 'yavdl';
+import { elm, renderAndCreateVirtualDom, diff } from 'yavdl';
 
 const childElm1 = elm('span', ['some-content'], {});
 const parentElm1 = elm('div', [childElm1], {});
